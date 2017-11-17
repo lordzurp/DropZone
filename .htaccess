@@ -1,0 +1,10 @@
+AuthUserFile /usr/share/httpd/tool.htpasswd
+AuthGroupFile /dev/null
+AuthName 'DropZone restricted'
+AuthType Basic
+<Limit GET POST>
+require valid-user
+</Limit>
+<LimitExcept GET POST>
+deny from all
+</LimitExcept>
